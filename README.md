@@ -6,11 +6,11 @@ A very simple CNN project.
 Simple-OpenCV-Calculator and this project are merged to one. Simple-OpenCV-Calculator will no longer be maintained.
 
 ## What I did here
-1. The first thing I did was, I created 44 gesture samples using OpenCV. For each gesture I captured 1200 images which were 50x50 pixels. All theses images were in grayscale which is stored in the gestures/ folder. The pictures were flipped using flip_images.py. This script flips every image along the vertical axis. Hence each gesture has 2400 images.
+1. The first thing I did was, I created 4 gesture samples using OpenCV. For each gesture I captured 1200 images which were 50x50 pixels. All theses images were in grayscale which is stored in the gestures/ folder. The pictures were flipped using flip_images.py. This script flips every image along the vertical axis. Hence each gesture has 6200 images.
 2. Learned what a CNN is and how it works. Best resources were <a href="https://www.tensorflow.org/get_started/">Tensorflow's official website</a> and <a href="https://machinelearningmastery.com">machinelearningmastery.com</a>.
 3. Created a CNN which look a lot similar to <a href="https://www.tensorflow.org/tutorials/layers">this MNIST classifying model</a> using both Tensorflow and Keras. If you want to add more gestures you might need to add your own layers and also tweak some parameters, that you have to do on your own.
 4. Then used the model which was trained using Keras on a video stream.
-5. As of today, I have stored the 44 gestures for which are 26 alphabets and 10 numbers of American Sign language and some other gestures. And trained the model on these images.
+5. As of today, I have stored the 4 gestures for which are a,b,c,d of American Sign language and some other gestures. And trained the model on these images.
 
 There are a lot of details that I left. But these are the basic and main steps.
 
@@ -52,7 +52,7 @@ Before using this repo, let me warn about something. You will have no interactiv
   * In case you are not successful then move your hand a little bit and press 'c' again. Repeat this until you get a good histogram.
   * After you get a good histogram press 's' to save the histogram. All the windows close.
   
-  2. I already have added 44 (0-43) gestures. It is on you if you want to add even more gestures or replace my gestures. Hence this step is <b>OPTIONAL</b>. To create your own gestures or replace my gestures do the following. It is done by the command given below. On starting executing this program, you will have to enter the gesture number and gesture name/text. Then an OpenCV window called "Capturing gestures" which will appear. In the webcam feed you will see a green window (inside which you will have to do your gesture) and a counter that counts the number of pictures stored.
+  2. I already have added 4 gestures. It is on you if you want to add even more gestures or replace my gestures. Hence this step is <b>OPTIONAL</b>. To create your own gestures or replace my gestures do the following. It is done by the command given below. On starting executing this program, you will have to enter the gesture number and gesture name/text. Then an OpenCV window called "Capturing gestures" which will appear. In the webcam feed you will see a green window (inside which you will have to do your gesture) and a counter that counts the number of pictures stored.
 
     python create_gestures.py   
 
@@ -138,5 +138,14 @@ Here is where you will have all the fun.
 5. During operator selection, 1 means '+', 2 means '-', 3 means '\*', 4 means '/', 5 means '%', 6 means '\*\*', 7 means '>>' or right shift operator, 8 means '<<' or left shift operator, 9 means '&' or bitwise AND and 0 means '|' or bitwise OR.
 
 
+## Structure
+    ├── creating a gesture         - Creating gesture
+    ├── displaying all gesture     - Displaying all gesture after created
+    ├── gestures                   - Store all the training images  
+    ├── tmp                        - All export model
+    ├── training                   - All trainning codes
+    │   ├── cnn_keras              - Training code using keras
+    │   ├── cnn_tf.py              - Training code using tensorflow
+    └── README.md                  - Some explanation for Sign Language project 
 # References 
 Saha, D.. (2018, May 9). Sign-Language (Version 1). figshare. https://doi.org/10.6084/m9.figshare.6241901.v1A very simple CNN project.
